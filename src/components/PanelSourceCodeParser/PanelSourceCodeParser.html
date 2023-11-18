@@ -1,0 +1,52 @@
+<div class="PanelSourceCodeParser ui form">
+  <h1 class="ui header">
+    {{ $t('YouTube ID Parser')}}
+  </h1>
+
+  <div class="field">
+    <label>
+      {{ $t('HTML Source Code') }}
+
+      <a href="https://gdoc.pub/doc/e/2PACX-1vSdkHVOxXTe9sjC3FZ93OZf5NqFtFvkoY3QQojRVV9D8MxSihXw2TAi5y_Mf1LToL7MNXErT-CdDf0r" target="instruction">
+        {{ $t('How to get source code with YouTube ID?') }}
+      </a>
+    </label>
+
+    <textarea class="source-code" id="source_code"
+      v-model="db.localConfig.sourceCode"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="youtube_url">
+      {{ $t('YouTube URL') }}
+    </label>
+
+    <div class="ui action input">
+      <input type="text" v-model="computedYouTubeURL" :placeholder="$t('YouTube URL')" readonly>
+      <a class="ui button"
+         :href="computedYouTubeURL"
+         :class="computedOpenYouTubeButton"
+         target="_blank">
+        {{ $t('OPEN') }}
+      </a>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>
+      <a href="https://downsub.com/" target="downsub">
+        {{ $t('Download YouTube Caption') }}
+      </a>
+    </label>
+
+    <div class="ui action input">
+      <input type="text" v-model="computedDownsubURL" :placeholder="$t('Downsub URL')" readonly>
+      <a class="ui button"
+         :href="computedDownsubURL"
+         :class="computedOpenDownsubButton"
+         target="_blank">
+        {{ $t('OPEN') }}
+      </a>
+    </div>
+  </div>
+</div>
